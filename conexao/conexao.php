@@ -1,8 +1,8 @@
 <?php 
-$servidor = 'localhost';
-$usuario = 'root';
-$senha = '';
-$banco = 'cadastro';
+$servidor = 'incentiva.database.windows.net';
+$usuario = 'raullages';
+$senha = 'Eminem31';
+$banco = 'incentiva construtora';
     
 $conexao = mysqli_connect($servidor,$usuario,$senha,$banco);
 $selecao = mysqli_select_db($conexao,$banco);
