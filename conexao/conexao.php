@@ -1,5 +1,5 @@
 <?php 
-$servidor = 'incentiva.database.windows.net';
+/*$servidor = 'incentiva.database.windows.net';
 $usuario = 'raullages31';
 $senha = 'Eminem31';
 $banco = 'incentiva construtora';
@@ -9,6 +9,19 @@ $selecao = mysqli_select_db($conexao,$banco);
 
 if(!$conexao){
     echo "Erro ao Conectar com o Banco testando";
+}*/
+try {
+    $conexao = new PDO("sqlsrv:server = tcp:incentiva.database.windows.net,1433; Database = incentiva construtora", "raullages31", "Eminem31");
+    $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
+catch (PDOException $e) {
+    print("Error connecting to SQL Server.");
+    die(print_r($e));
+}
+
+// SQL Server Extension Sample Code:
+$selecao = array("UID" => "raullages31@incentiva", "pwd" => "{your_password_here}", "Database" => "incentiva construtora", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
+$servidor = "tcp:incentiva.database.windows.net,1433";
+$conexao = sqlsrv_connect($serverName, $connectionInfo);
 
 ?>
