@@ -1,4 +1,5 @@
 <?php 
+<<<<<<< HEAD
 /*$servidor = 'incentiva.database.windows.net';
 $usuario = 'raullages31';
 $senha = 'Eminem31';
@@ -23,12 +24,26 @@ $conect_opcao = array(
 	
 	$conexao = sqlsrv_connect($servidor,$conect_opcao);
 
+=======
+$servidor = "incentiva.database.windows.net";
+$conect_opcao = array(
+	"database" => "incentiva construtora",
+	"Uid" => "raullages31",
+	"PWD" => "Eminem31"
+	);
+	
+	$conexao = sqlsrv_connect($servidor,$conect_opcao);
+
+>>>>>>> ec6a9288c8a2d4060902c63e5e9b1bb563e49105
 	if($conexao){
 		echo 'Sucesso';
 	}else{
 		echo 'Erro ao conectar';
 	}
+<<<<<<< HEAD
 	
 
+=======
+>>>>>>> ec6a9288c8a2d4060902c63e5e9b1bb563e49105
 
 ?>
