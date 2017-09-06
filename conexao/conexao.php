@@ -4,13 +4,13 @@ $usuario = 'raullages31';
 $senha = 'Eminem31';
 $banco = 'incentiva construtora';
     
-$conexao = mysqli_connect($servidor,$usuario,$senha,$banco);
-$selecao = mysqli_select_db($conexao,$banco);
+$conexao = mysql_connect($servidor,$usuario,$senha,$banco);
+$selecao = mysql_select_db($conexao,$banco);
+
 
 if(!$conexao){
-    echo "Erro ao Conectar com o Banco";
+    echo "Erro ao Conectar com o Banco Teste";
 }
-
 // PHP Data Objects(PDO) Sample Code:
 /*try {
     $conexao = new PDO("sqlsrv:server = tcp:incentiva.database.windows.net,1433; Database = incentiva construtora", "raullages31", "Eminem31");
