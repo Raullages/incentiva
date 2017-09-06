@@ -6,7 +6,7 @@
 	$valida_nome = $_POST['nome'];
 	$valida_senha = md5($_POST['senha']);
 
-	$resultado = $conexao->query("SELECT * FROM usuario WHERE nome = '".$valida_nome."'");
+	$resultado = $conexao->query("SELECT * FROM dbo.usuario WHERE nome = '".$valida_nome."'");
 	$row = sqlsrv_num_rows($resultado);
 
 	if($row){
