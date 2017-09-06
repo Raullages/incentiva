@@ -7,10 +7,10 @@
 	$valida_senha = md5($_POST['senha']);
 
 	$resultado = $conexao->query("SELECT * FROM usuario WHERE nome = '".$valida_nome."'");
-	$row = mysqli_num_rows($resultado);
+	$row = sqlsrv_num_rows($resultado);
 
 	if($row){
-		$row = mysqli_fetch_array($resultado);
+		$row = sqlsrv_fetch_array($resultado);
 		
 		if(!strcmp($valida_senha, $row['senha'])){
 			$_SESSION['nome_usuario'] = $row['nome'];

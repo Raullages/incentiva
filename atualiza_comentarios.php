@@ -3,7 +3,7 @@
 		$codigo = $_POST['ident'];
 
 		$resultado = $conexao->query("SELECT * FROM historico WHERE id = $codigo ORDER BY data");
-		$comentario = mysqli_num_rows($resultado);
+		$comentario = sqlsrv_num_rows($resultado);
 					
 				if(!$comentario == 0){
 

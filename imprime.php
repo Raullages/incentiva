@@ -13,10 +13,10 @@ $dompdf = new DOMPDF();
 	
 
 		$result = $conexao->query("SELECT * FROM projeto p INNER JOIN historico h ON p.id = h.id where p.id = '$codigo'");
-        $linha = mysqli_num_rows($result);
+        $linha = sqlsrv_num_rows($result);
         
         if ($linha > 0){
-                while($linha = mysqli_fetch_array($result)){
+                while($linha = sqlsrv_fetch_array($result)){
 						$id = $linha['id'];
                         $nome = $linha['nome_proj'];
                         $responsavel = $linha['nome_resp'];

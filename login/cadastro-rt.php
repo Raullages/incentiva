@@ -7,13 +7,13 @@
 	$senha = md5($_POST['senha']);
 
 	$select = $conexao->query("SELECT * FROM usuario");
-	$row = mysqli_num_rows($select);
+	$row = sqlsrv_num_rows($select);
 
 	if($row){
 		$row = $select->fetch_array();
 
 			if(strcmp($nome, $row['nome'])){
-				$conexao->query("INSERT INTO usuario VALUES ('','$nome','$email','$senha')") or die(mysql_error());
+				$conexao->query("INSERT INTO usuario VALUES ('','$nome','$email','$senha')") or die(sqlsrv_error());
 				echo "<script>alert('Cadastro Realizado com sucesso!');
 				location.href= '../index.php';
 				

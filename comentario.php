@@ -19,7 +19,7 @@
 			$codigo = $_GET['codigo'];
 
 			$comentario = $conexao->query("SELECT * FROM projeto ORDER BY hora WHERE id = $codigo ");
-			$contar_comentario = mysqli_num_rows($comentario);
+			$contar_comentario = sqlsrv_num_rows($comentario);
 
 			if ($contar_comentario == 0) {
 				echo "<li><strong>Sistema de comentarios - Em ".date('d/m/y H:i')."</strong> Disse:<span> Nenhum comentario postado, seja o primeiro!!</span></li>";

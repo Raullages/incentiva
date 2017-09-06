@@ -114,7 +114,7 @@
 
 
 				$resultado = $conexao->query("SELECT * FROM historico h INNER JOIN projeto p ON h.id = p.id WHERE h.id = $codigo ORDER BY data DESC");
-				$comentario = mysqli_num_rows($resultado);
+				$comentario = sqlsrv_num_rows($resultado);
 				?>
 					<div class="obs"><h5>OBSERVACAO:</h5>
 							<div class="coment-obs">
