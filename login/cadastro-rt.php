@@ -6,7 +6,7 @@
 	$email = $_POST['email'];
 	$senha = md5($_POST['senha']);
 
-	$select = $conexao->query("SELECT * FROM usuario");
+	$select = $conexao->query("SELECT * FROM dbo.usuario");
 	$row = sqlsrv_num_rows($select);
 
 	if($row){
